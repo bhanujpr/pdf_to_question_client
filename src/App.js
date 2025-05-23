@@ -26,7 +26,10 @@ function App() {
 
     setLoading(true);
     try {
-      const response = await axios.post('http://localhost:5000/upload', formData);
+      const response = await axios.post(
+        'https://pdf-to-question-server.onrender.com/upload',
+        formData
+      );
       setQuestions(response.data.questions);
     } catch (err) {
       const errorData = err.response?.data;
